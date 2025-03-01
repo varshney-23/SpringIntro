@@ -1,5 +1,6 @@
 package com.springdemo.springintro.controller;
 
+import com.springdemo.springintro.controller.dtu.User;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -21,4 +22,11 @@ public class HelloController {
     public String helloParam(@PathVariable String name){
         return "Hello " + name + " from bridgelabz";
     }
+
+    @PostMapping("/post")
+    public String sayHello(@RequestBody User user){
+        return "Hello"+user.getFirstName() +" "+ user.getLastName()+" !";
+    }
+
+
 }
