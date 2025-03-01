@@ -1,9 +1,6 @@
 package com.springdemo.springintro.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -17,6 +14,11 @@ public class HelloController {
 
     @GetMapping(value = "/query")
     public String query(@RequestParam String name){
+        return "Hello " + name + " from bridgelabz";
+    }
+
+    @GetMapping("/hello/param/{name}")
+    public String helloParam(@PathVariable String name){
         return "Hello " + name + " from bridgelabz";
     }
 }
